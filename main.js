@@ -6,7 +6,21 @@ $(document).ready(function(){
   //stessa funzione ma cliccando sul pulsante next
   $('.next').click(function(){
    nextImage();
-  });
+ });
+
+ $('.nav i').click(function(){ //trovo la posizione del pallino cliccato
+   var posizione= $(this).index();
+   console.log(posizione);
+    //rimuovo classe active
+   $('img').removeClass('active');
+   //dare classe active all'elemento con indice trovato attraverso il metodo eq()
+   $('img').eq(posizione).addClass('active');
+   //rimuovo la classe active a tutti i pallini
+   $('.nav i').removeClass('active');
+   //dare la classe al pallino giusto
+   $('.nav i').eq(posizione).addClass('active');
+ });
+
 
   //FUNZIONI//
 
